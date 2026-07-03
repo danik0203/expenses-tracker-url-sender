@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting to DuckBucks...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0b0f19;
+            color: #ffffff;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .loader {
+            border: 4px solid #1f2937;
+            border-top: 4px solid #14b8a6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #14b8a6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>פותח את DuckBucks...</h2>
+        <div class="loader"></div>
+        <p>אם האפליקציה לא נפתחה אוטומטית, <a href="#" id="manual-link">לחץ כאן כדי לפתוח אותה ידנית</a>.</p>
+    </div>
+
+    <script>
+        var appUrl = "duckbucks://share" + window.location.search;
+        document.getElementById("manual-link").href = appUrl;
+        window.location.href = appUrl;
+    </script>
+</body>
+</html>
